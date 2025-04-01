@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Methods - PayHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dashboard-body">
+    <header class="dashboard-header">
+        <div class="logo">
+            <h1>PayHub</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search transactions...">
+            <button><span class="search-icon">🔍</span></button>
+        </div>
+        <div class="user-menu">
+            <div class="notifications">
+                <span class="notification-icon">🔔</span>
+                <span class="notification-badge">3</span>
+            </div>
+            <div class="user-profile">
+                <img src="https://via.placeholder.com/40" alt="User Profile" class="profile-image">
+                <span class="username">John Doe</span>
+                <span class="dropdown-icon">▼</span>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="settings.html">Settings</a></li>
+                        <li><a href="help.html">Help</a></li>
+                        <li><a href="index.html">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><span class="nav-icon">📊</span> Dashboard</a></li>
+                    <li><a href="transactions.html"><span class="nav-icon">💳</span> Transactions</a></li>
+                    <li class="active"><a href="payment-methods.html"><span class="nav-icon">💰</span> Payment Methods</a></li>
+                    <li><a href="send-money.html"><span class="nav-icon">↗️</span> Send Money</a></li>
+                    <li><a href="request-money.html"><span class="nav-icon">↙️</span> Request Money</a></li>
+                    <li><a href="reports.html"><span class="nav-icon">📈</span> Reports</a></li>
+                    <li><a href="settings.html"><span class="nav-icon">⚙️</span> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="help.html"><span class="help-icon">❓</span> Help Center</a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <section class="page-header">
+                <h2>Payment Methods</h2>
+                <p>Manage your cards and bank accounts</p>
+            </section>
+
+            <section class="payment-methods-section">
+                <div class="section-header">
+                    <h3>Your Payment Methods</h3>
+                    <button class="btn-primary" id="addPaymentMethod">Add New</button>
+                </div>
+                
+                <div class="payment-methods-list">
+                    <div class="payment-card credit-card">
+                        <div class="card-type-badge">VISA</div>
+                        <div class="card-number">**** **** **** 4567</div>
+                        <div class="card-details">
+                            <div class="card-holder">John Doe</div>
+                            <div class="card-expiry">09/28</div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-icon edit-btn">✏️</button>
+                            <button class="btn-icon delete-btn">🗑️</button>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-card bank-account">
+                        <div class="card-type-badge">BANK</div>
+                        <div class="card-number">Chase Bank</div>
+                        <div class="card-details">
+                            <div class="card-holder">John Doe</div>
+                            <div class="account-number">**** 9876</div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-icon edit-btn">✏️</button>
+                            <button class="btn-icon delete-btn">🗑️</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="modal" id="paymentMethodModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Add Payment Method</h3>
+                        <button class="close-btn">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="payment-type-selector">
+                            <button class="payment-type-btn active" data-type="card">Credit/Debit Card</button>
+                            <button class="payment-type-btn" data-type="bank">Bank Account</button>
+                        </div>
+                        
+                        <div class="payment-form" id="cardForm">
+                            <div class="form-group">
+                                <label for="cardNumber">Card Number</label>
+                                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cardExpiry">Expiration Date</label>
+                                    <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardCvv">CVV</label>
+                                    <input type="text" id="cardCvv" placeholder="123" maxlength="4">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cardName">Cardholder Name</label>
+                                <input type="text" id="cardName" placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="cardAddress">Billing Address</label>
+                                <input type="text" id="cardAddress" placeholder="Street Address">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cardCity">City</label>
+                                    <input type="text" id="cardCity">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardState">State</label>
+                                    <input type="text" id="cardState">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardZip">ZIP Code</label>
+                                    <input type="text" id="cardZip">
+                                </div>
+                            </div>
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="defaultCard">
+                                <label for="defaultCard">Set as default payment method</label>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-form" id="bankForm" style="display: none;">
+                            <div class="form-group">
+                                <label for="bankName">Bank Name</label>
+                                <input type="text" id="bankName">
+                            </div>
+                            <div class="form-group">
+                                <label for="accountType">Account Type</label>
+                                <select id="accountType">
+                                    <option value="checking">Checking</option>
+                                    <option value="savings">Savings</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="routingNumber">Routing Number</label>
+                                <input type="text" id="routingNumber">
+                            </div>
+                            <div class="form-group">
+                                <label for="accountNumber">Account Number</label>
+                                <input type="text" id="accountNumber">
+                            </div>
+                            <div class="form-group">
+                                <label for="accountName">Account Holder Name</label>
+                                <input type="text" id="accountName">
+                            </div>
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="defaultBank">
+                                <label for="defaultBank">Set as default payment method</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn-secondary" id="cancelBtn">Cancel</button>
+                        <button class="btn-primary" id="saveBtn">Save Payment Method</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

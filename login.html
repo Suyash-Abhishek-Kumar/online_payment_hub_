@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PayHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>PayHub</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="login.html" class="btn-login active">Login</a></li>
+                <li><a href="signup.html" class="btn-signup">Sign Up</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="auth-container">
+            <div class="auth-card">
+                <h2>Login to Your Account</h2>
+                <form class="auth-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn-primary btn-full">Login</button>
+                </form>
+                <div class="auth-separator">
+                    <span>OR</span>
+                </div>
+                <div class="social-auth">
+                    <button class="btn-social btn-google">
+                        <img src="https://via.placeholder.com/20" alt="Google Logo">
+                        Continue with Google
+                    </button>
+                    <button class="btn-social btn-facebook">
+                        <img src="https://via.placeholder.com/20" alt="Facebook Logo">
+                        Continue with Facebook
+                    </button>
+                </div>
+                <div class="auth-redirect">
+                    <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 PayHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

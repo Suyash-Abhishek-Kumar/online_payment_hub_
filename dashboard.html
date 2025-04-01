@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - PayHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dashboard-body">
+    <header class="dashboard-header">
+        <div class="logo">
+            <h1>PayHub</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search transactions...">
+            <button><span class="search-icon">🔍</span></button>
+        </div>
+        <div class="user-menu">
+            <div class="notifications">
+                <span class="notification-icon">🔔</span>
+                <span class="notification-badge">3</span>
+            </div>
+            <div class="user-profile">
+                <img src="https://via.placeholder.com/40" alt="User Profile" class="profile-image">
+                <span class="username">John Doe</span>
+                <span class="dropdown-icon">▼</span>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="settings.html">Settings</a></li>
+                        <li><a href="help.html">Help</a></li>
+                        <li><a href="index.html">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="dashboard.html"><span class="nav-icon">📊</span> Dashboard</a></li>
+                    <li><a href="transactions.html"><span class="nav-icon">💳</span> Transactions</a></li>
+                    <li><a href="payment-methods.html"><span class="nav-icon">💰</span> Payment Methods</a></li>
+                    <li><a href="send-money.html"><span class="nav-icon">↗️</span> Send Money</a></li>
+                    <li><a href="request-money.html"><span class="nav-icon">↙️</span> Request Money</a></li>
+                    <li><a href="reports.html"><span class="nav-icon">📈</span> Reports</a></li>
+                    <li><a href="settings.html"><span class="nav-icon">⚙️</span> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="help.html"><span class="help-icon">❓</span> Help Center</a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <section class="welcome-banner">
+                <h2>Welcome back, John!</h2>
+                <p>Here's an overview of your account</p>
+            </section>
+
+            <section class="account-overview">
+                <div class="balance-card">
+                    <h3>Total Balance</h3>
+                    <div class="balance-amount">$2,456.78</div>
+                    <div class="balance-actions">
+                        <a href="send-money.html" class="btn-action">Send</a>
+                        <a href="request-money.html" class="btn-action">Request</a>
+                        <a href="add-money.html" class="btn-action">Add Money</a>
+                    </div>
+                </div>
+                <div class="quick-actions">
+                    <div class="action-card">
+                        <div class="action-icon">↗️</div>
+                        <h4>Send Money</h4>
+                        <a href="send-money.html" class="btn-secondary">Send Now</a>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">↙️</div>
+                        <h4>Request Money</h4>
+                        <a href="request-money.html" class="btn-secondary">Request Now</a>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">💳</div>
+                        <h4>Add Payment Method</h4>
+                        <a href="payment-methods.html" class="btn-secondary">Add New</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="recent-transactions">
+                <div class="section-header">
+                    <h3>Recent Transactions</h3>
+                    <a href="transactions.html" class="view-all">View All</a>
+                </div>
+                <div class="transaction-list">
+                    <div class="transaction-item">
+                        <div class="transaction-icon outgoing">↗️</div>
+                        <div class="transaction-details">
+                            <h4>Payment to Sarah Johnson</h4>
+                            <p class="transaction-date">Apr 1, 2025 • 10:23 AM</p>
+                        </div>
+                        <div class="transaction-amount outgoing">-$125.00</div>
+                    </div>
+                    <div class="transaction-item">
+                        <div class="transaction-icon incoming">↙️</div>
+                        <div class="transaction-details">
+                            <h4>Payment from Mike Smith</h4>
+                            <p class="transaction-date">Mar 30, 2025 • 3:45 PM</p>
+                        </div>
+                        <div class="transaction-amount incoming">+$250.00</div>
+                    </div>
+                    <div class="transaction-item">
+                        <div class="transaction-icon outgoing">↗️</div>
+                        <div class="transaction-details">
+                            <h4>Electric Bill Payment</h4>
+                            <p class="transaction-date">Mar 28, 2025 • 9:15 AM</p>
+                        </div>
+                        <div class="transaction-amount outgoing">-$87.35</div>
+                    </div>
+                    <div class="transaction-item">
+                        <div class="transaction-icon incoming">↙️</div>
+                        <div class="transaction-details">
+                            <h4>Refund from Amazon</h4>
+                            <p class="transaction-date">Mar 25, 2025 • 2:30 PM</p>
+                        </div>
+                        <div class="transaction-amount incoming">+$43.99</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="payment-methods">
+                <div class="section-header">
+                    <h3>Your Payment Methods</h3>
+                    <a href="payment-methods.html" class="view-all">Manage All</a>
+                </div>
+                <div class="payment-method-list">
+                    <div class="payment-method-item">
+                        <div class="payment-method-icon">💳</div>
+                        <div class="payment-method-details">
+                            <h4>Visa ending in 4567</h4>
+                            <p>Expires 09/28</p>
+                        </div>
+                        <div class="payment-method-actions">
+                            <a href="#" class="btn-small">Edit</a>
+                        </div>
+                    </div>
+                    <div class="payment-method-item">
+                        <div class="payment-method-icon">🏦</div>
+                        <div class="payment-method-details">
+                            <h4>Chase Bank Account</h4>
+                            <p>Account ending in 9876</p>
+                        </div>
+                        <div class="payment-method-actions">
+                            <a href="#" class="btn-small">Edit</a>
+                        </div>
+                    </div>
+                    <div class="payment-method-item add-new">
+                        <div class="payment-method-icon">➕</div>
+                        <div class="payment-method-details">
+                            <h4>Add New Payment Method</h4>
+                        </div>
+                        <div class="payment-method-actions">
+                            <a href="payment-methods.html" class="btn-small">Add</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

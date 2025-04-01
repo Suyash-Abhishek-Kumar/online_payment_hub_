@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Money - PayHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dashboard-body">
+    <header class="dashboard-header">
+        <div class="logo">
+            <h1>PayHub</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search transactions...">
+            <button><span class="search-icon">🔍</span></button>
+        </div>
+        <div class="user-menu">
+            <div class="notifications">
+                <span class="notification-icon">🔔</span>
+                <span class="notification-badge">3</span>
+            </div>
+            <div class="user-profile">
+                <img src="https://via.placeholder.com/40" alt="User Profile" class="profile-image">
+                <span class="username">John Doe</span>
+                <span class="dropdown-icon">▼</span>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="settings.html">Settings</a></li>
+                        <li><a href="help.html">Help</a></li>
+                        <li><a href="index.html">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><span class="nav-icon">📊</span> Dashboard</a></li>
+                    <li><a href="transactions.html"><span class="nav-icon">💳</span> Transactions</a></li>
+                    <li><a href="payment-methods.html"><span class="nav-icon">💰</span> Payment Methods</a></li>
+                    <li class="active"><a href="send-money.html"><span class="nav-icon">↗️</span> Send Money</a></li>
+                    <li><a href="request-money.html"><span class="nav-icon">↙️</span> Request Money</a></li>
+                    <li><a href="reports.html"><span class="nav-icon">📈</span> Reports</a></li>
+                    <li><a href="settings.html"><span class="nav-icon">⚙️</span> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="help.html"><span class="help-icon">❓</span> Help Center</a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <section class="page-header">
+                <h2>Send Money</h2>
+                <p>Transfer money to friends, family, or businesses</p>
+            </section>
+
+            <div class="send-money-container">
+                <div class="send-money-steps">
+                    <div class="step active" data-step="recipient">
+                        <div class="step-number">1</div>
+                        <div class="step-name">Recipient</div>
+                    </div>
+                    <div class="step" data-step="amount">
+                        <div class="step-number">2</div>
+                        <div class="step-name">Amount</div>
+                    </div>
+                    <div class="step" data-step="review">
+                        <div class="step-number">3</div>
+                        <div class="step-name">Review</div>
+                    </div>
+                </div>
+
+                <div class="send-money-form">
+                    <!-- Step 1: Recipient -->
+                    <div class="form-step active" id="recipient-step">
+                        <h3>Who are you sending money to?</h3>
+                        
+                        <div class="recipient-options">
+                            <div class="recipient-option">
+                                <input type="radio" name="recipient-type" id="recipient-email" checked>
+                                <label for="recipient-email">Email</label>
+                            </div>
+                            <div class="recipient-option">
+                                <input type="radio" name="recipient-type" id="recipient-phone">
+                                <label for="recipient-phone">Phone Number</label>
+                            </div>
+                            <div class="recipient-option">
+                                <input type="radio" name="recipient-type" id="recipient-username">
+                                <label for="recipient-username">Username</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group recipient-input" id="email-input">
+                            <label for="recipient-email-address">Email Address</label>
+                            <input type="email" id="recipient-email-address" placeholder="name@example.com">
+                        </div>
+                        
+                        <div class="form-group recipient-input" id="phone-input" style="display: none;">
+                            <label for="recipient-phone-number">Phone Number</label>
+                            <input type="tel" id="recipient-phone-number" placeholder="(123) 456-7890">
+                        </div>
+                        
+                        <div class="form-group recipient-input" id="username-input" style="display: none;">
+                            <label for="recipient-username-field">Username</label>
+                            <input type="text" id="recipient-username-field" placeholder="@username">
+                        </div>
+                        
+                        <h4>Recent Recipients</h4>
+                        <div class="recent-recipients">
+                            <div class="recipient-card">
+                                <img src="https://via.placeholder.com/50" alt="Sarah Johnson">
+                                <div class="recipient-name">Sarah Johnson</div>
+                                <div class="recipient-identifier">sarah@example.com</div>
+                            </div>
+                            <div class="recipient-card">
+                                <img src="https://via.placeholder.com/50" alt="Mike Smith">
+                                <div class="recipient-name">Mike Smith</div>
+                                <div class="recipient-identifier">mike@example.com</div>
+                            </div>
+                            <div class="recipient-card">
+                                <img src="https://via.placeholder.com/50" alt="Lisa Wong">
+                                <div class="recipient-name">Lisa Wong</div>
+                                <div class="recipient-identifier">lisa@example.com</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button class="btn-primary next-step" data-next="amount">Continue</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Amount -->
+                    <div class="form-step" id="amount-step">
+                        <h3>How much would you like to send?</h3>
+                        
+                        <div class="recipient-summary">
+                            <div class="recipient-avatar">
+                                <img src="https://via.placeholder.com/50" alt="Recipient">
+                            </div>
+                            <div class="recipient-info">
+                                <div class="recipient-name">Sarah Johnson</div>
+                                <div class="recipient-identifier">sarah@example.com</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group amount-input">
+                            <label for="payment-amount">Amount</label>
+                            <div class="amount-wrapper">
+                                <span class="currency-symbol">$</span>
+                                <input type="text" id="payment-amount" placeholder="0.00">
+                            </div>
+                        </div>
+                        
+                        <div class="quick-amounts">
+                            <button class="quick-amount-btn">$10</button>
+                            <button class="quick-amount-btn">$25</button>
+                            <button class="quick-amount-btn">$50</button>
+                            <button class="quick-amount-btn">$100</button>
+                            <button class="quick-amount-btn">$200</button>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="payment-note">Add a note (optional)</label>
+                            <textarea id="payment-note" placeholder="What's this payment for?"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="payment-method">Payment Method</label>
+                            <select id="payment-method">
+                                <option value="balance">PayHub Balance ($2,456.78)</option>
+                                <option value="visa">Visa ending in 4567</option>
+                                <option value="bank">Chase Bank Account</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button class="btn-secondary prev-step" data-prev="recipient">Back</button>
+                            <button class="btn-primary next-step" data-next="review">Continue</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Review -->
+                    <div class="form-step" id="review-step">
+                        <h3>Review your payment</h3>
+                        
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="recipient-avatar">
+                                    <img src="https://via.placeholder.com/50" alt="Recipient">
+                                </div>
+                                <div class="recipient-info">
+                                    <div class="recipient-name">Sarah Johnson</div>
+                                    <div class="recipient-identifier">sarah@example.com</div>
+                                </div>
+                            </div>
+                            
+                            <div class="review-amount">$50.00</div>
+                            
+                            <div class="review-note">Thanks for lunch!</div>
+                            
+                            <div class="review-details">
+                                <div class="review-detail">
+                                    <div class="detail-label">Payment method</div>
+                                    <div class="detail-value">PayHub Balance</div>
+                                </div>
+                                <div class="review-detail">
+                                    <div class="detail-label">Fee</div>
+                                    <div class="detail-value">$0.00</div>
+                                </div>
+                                <div class="review-detail total">
+                                    <div class="detail-label">Total</div>
+                                    <div class="detail-value">$50.00</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button class="btn-secondary prev-step" data-prev="amount">Back</button>
+                            <button class="btn-primary" id="send-payment-btn">Send Payment</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Success Message (Hidden initially) -->
+                    <div class="form-step" id="success-step">
+                        <div class="success-message">
+                            <div class="success-icon">✓</div>
+                            <h3>Payment Sent Successfully!</h3>
+                            <p>Your payment of $50.00 has been sent to Sarah Johnson.</p>
+                            <p>A confirmation has been sent to your email.</p>
+                            <div class="success-actions">
+                                <a href="dashboard.html" class="btn-secondary">Back to Dashboard</a>
+                                <a href="send-money.html" class="btn-primary">Send Another Payment</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
